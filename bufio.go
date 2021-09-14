@@ -9,6 +9,6 @@ import (
 func buffer() {
 	w := bufio.NewWriter(os.Stdout)
 	fmt.Fprint(w, "Hello, ")
-	fmt.Fprint(w, "world")
+	fmt.Fprint(w, "GO lang")
 	w.Flush()
 }
