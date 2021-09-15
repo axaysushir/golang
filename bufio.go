@@ -8,7 +8,7 @@ import (
 
 func buffer() {
 	w := bufio.NewWriter(os.Stdout)
-	fmt.Fprint(w, "Hello, ")
+	fmt.Fprint(w, "Hello World in, ")
 	fmt.Fprint(w, "GO lang")
 	w.Flush()
 }
