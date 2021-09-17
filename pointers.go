@@ -5,7 +5,7 @@ import "fmt"
 //  Go has pointers. A pointer holds the memory address of a value.
 // The type *T is a pointer to a T value. Its zero value is nil.
 
-func main() {
+func pointers() {
 	fmt.Println("Hello World")
 
 	myNumber := 123
