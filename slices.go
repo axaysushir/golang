@@ -35,4 +35,15 @@ func main() {
 
 	myOtherSlice := make([]int, 0, 5)  // add capacity by passing third argument
 	fmt.Println(myOtherSlice, mySlice) // [] [0 0 0 0 0]
+
+	// Append method
+
+	var s []int
+	s = append(s, 0)
+	s = append(s, 1, 2, 4)
+	printSlice(s) // len=2 cap=2 [0 1 2 4]
+
+}
+func printSlice(s []int) {
+	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
