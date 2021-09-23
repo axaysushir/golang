@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	axay := User{"Axay", "axay@go.dev", true, 5}
-	fmt.Println(axay)
+	fmt.Println(axay.Name)
 }
 
 type User struct {
