@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+// functions in golang
+
 func main() {
 	fmt.Println("Functions")
 	data := adder(12, 4)
