@@ -7,6 +7,7 @@ import (
 )
 
 func main() {
+	// web request in golang
 	res, err := http.Get("https://jsonplaceholder.typicode.com/posts")
 
 	if err != nil {
