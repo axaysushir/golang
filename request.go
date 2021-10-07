@@ -10,20 +10,20 @@ import (
 
 func main() {
 	// web request in golang
-	// res, err := http.Get("https://jsonplaceholder.typicode.com/posts")
+	res, err := http.Get("https://jsonplaceholder.typicode.com/posts")
 
-	// if err != nil {
-	// 	log.Fatalln(err)
-	// }
+	if err != nil {
+		log.Fatalln(err)
+	}
 
-	// body, err := ioutil.ReadAll(res.Body)
+	body, err := ioutil.ReadAll(res.Body)
 
-	// if err != nil {
-	// 	log.Fatalln(err)
-	// }
+	if err != nil {
+		log.Fatalln(err)
+	}
 
-	// data := string(body)
-	// log.Printf(data)
+	data := string(body)
+	log.Printf(data)
 
 	postBody, _ := json.Marshal(map[string]string{
 		"name":  "James",
