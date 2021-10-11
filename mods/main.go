@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"net/http"
+)
 
 func main() {
-	fmt.Println("Mod in golang")
+	r := mux.NewRouter()
+	r.HandleFunc("/", HomeHandler)
+	http.Handle("/", r)
+	r.Methods("GET")
+}
+
+func HomeHandler() {
+	fmt.Println("Welcome Home")
 }
