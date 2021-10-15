@@ -35,3 +35,19 @@ func getOneCourse(w http.ResponseWriter, r *http.Request) {
 	}
 	json.NewEncoder(w).Encode("No course found")
 }
+
+func creteOneCourse(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-type", "application/json")
+
+	if r.body == nil {
+		json.NewEncoder(w).Encode("please send some data")
+	}
+
+	var course Course
+	_= json.NewDecoder(r.body).Decode(&course)
+	if course.IsEmpty() {
+		json.NewEncoder(w).Encode("No data")
+		return 
+	}
+}
+
