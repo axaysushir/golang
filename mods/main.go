@@ -49,5 +49,12 @@ func creteOneCourse(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode("No data")
 		return 
 	}
+
+	// generate ID and append course
+	rand.Seed(time.Now().UnixNano())
+	Course.CourseId = rand.Intn(12345)
+	courses = append(courses, course)
+	json.NewEncoder(w).Encode(course)
+	return
 }
 
