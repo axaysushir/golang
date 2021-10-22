@@ -65,3 +65,10 @@ func updateCourse(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+
+func delteCourse(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-type", "application/json")
+	if r.body == nil {
+		json.NewEncoder(w).Encode("please send some data")
+	}
+}
