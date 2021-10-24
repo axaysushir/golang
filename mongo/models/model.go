@@ -1,6 +1,8 @@
 package model
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func model() {
 	fmt.Println("Models in go")
