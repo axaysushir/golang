@@ -10,6 +10,6 @@ func model() {
 
 type data struct {
 	Id      int64 `json:"id" bson:"id"`
-	Name    string
+	Movie   string
 	Watched string `json:"watched"`
 }
