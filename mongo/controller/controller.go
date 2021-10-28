@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 
+	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
@@ -27,4 +28,27 @@ func init() {
 
 	collection := client.Database(dbName).Collection(colName)
 
+}
+
+func insertOneMovie(movie model.Netflix) {
+	inserted, err := collection.InsertOne(context.Background(), movie)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("Inserted 1 movie in db", inserted.InsertedID)
+}
+
+
+//Update movie
+func updateOneMovie(movieId string) {
+	id, _ := primitive.ObjectIDFromHex(movieId)
+	filter := bson.M("_id": id)
+	update := bson.M("$set": bson.M{"watched": true})
+
+	result, err := collection.UpdateOne(context.Background(), filter, update)
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("modified count", result.ModifiedCount)
 }
