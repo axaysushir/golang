@@ -73,3 +73,38 @@ func deleteAllMovie() int64 {
 	fmt.Println("Number of movie delete:", deleteResult.DeletedCount)
 	return deleteResult.DeletedCount
 }
+
+func getAllMovies() []primitive.M {
+	cur, err := collection.Find(context.Background(), bson.D({}))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var moives []primitive.M
+	for cur.Next(context.Background()) {
+		var movie bson.M
+		err := cur.Decode(&movie)
+		if err != nil {
+			log.Fatal(err)
+		}
+		movies = append(movies, movie)
+	}
+	defer cur.Close(context.Background())
+	return movies
+}
+
+func GetMyAllMovies(w http.ResponseWriter, r *http.Request) {
+	w.Header().set("Content-Type", "appliocation/x-www-form-urlencode")
+	allMovies := getAllMovies()
+	json.NewEncoder(w).Encode(allMovies)
+}
+
+func CreateMovie(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
+	w.Header().Set("Allow-Control-Allow-Methods", "POST")
+
+	var movie mode.Netflix
+	_ = json.NewDecoder(r.body).Decode(&movie)
+	insertOneMovie(movie)
+	json.NewEncoder(w).Encode(movie)
+}
