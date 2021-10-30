@@ -108,3 +108,12 @@ func CreateMovie(w http.ResponseWriter, r *http.Request) {
 	insertOneMovie(movie)
 	json.NewEncoder(w).Encode(movie)
 }
+
+func MarkAsWatched(w http.ResponseWriter, r *http.Request){
+	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
+	w.Header().Set("Allow-Control-Allow-Methods", "POST")
+
+	params := mux.Vars(r)
+	updateOneMovie(parms["id"])
+	json.NewEncoder(w).Encode(params["id"])
+}
