@@ -123,6 +123,13 @@ func DeleteMovie(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Allow-Control-Allow-Methods", "POST")
 
 	params := mux.Vars(r)
-	deleteonedeleteOneMovie(params["id"])
+	deleteOneMovie(params["id"])
 	json.NewEncoder(w).Encode(params["id"])
+}
+
+func DeleteAll(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/x-www-form-urlencode")
+	w.Header().Set("Allow-Control-Allow-Methods", "DELETE")
+	count := deleteAllMovie()
+	json.NewEncoder(w).Encode(count)
 }
