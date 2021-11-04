@@ -6,6 +6,7 @@ import (
 	"sync"
 )
 
+// Go routines and concurrency and Parellalism
 var signals = []string{"test"}
 var wg sync.WaitGroup
 var mutex sync.Mutex
