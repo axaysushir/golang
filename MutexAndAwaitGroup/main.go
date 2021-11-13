@@ -6,7 +6,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Race condition in go")
+	fmt.Println("Race condition in go with mutex and await group")
 
 	wg := &sync.WaitGroup{}
 	mutex := &sync.RWMutex{}
