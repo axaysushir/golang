@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	fmt.Println("Channels in golang")
 	myCh := make(chan int, 2)
 	wg := &sync.WaitGroup{}
 
