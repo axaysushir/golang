@@ -12,6 +12,7 @@ func main() {
 
 	// fmt.Println(<-mych)
 	// myCh <- 5
+	// use <- to incoming and outgoing channels
 	wg.Add(2)
 
 	// Read only

@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 )
-
+// initialize constructor
 type Course struct {
 	Name   string
 	Id     int
