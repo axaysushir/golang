@@ -12,7 +12,8 @@ func main() {
 	mutex := &sync.RWMutex{}
 
 	var score = []int{0}
-	wg.Add(3)
+	wg.Add(3) // add  number of func to execute
+	// use lock and unlock to prevent mishandling
 	go func(wg *sync.WaitGroup, m *sync.RWMutex) {
 		fmt.Println("One R")
 		mutex.Lock()

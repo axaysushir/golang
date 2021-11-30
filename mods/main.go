@@ -14,8 +14,8 @@ type Course struct {
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", HomeHandler)
-	http.Handle("/", r)
-	r.Methods("GET")
+	http.Handle("/", r) // handle route
+	r.Methods("GET") // declare method
 }
 
 func HomeHandler() {
