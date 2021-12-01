@@ -1,3 +1,4 @@
+// simple http server in Node.js without any library
 const http = require('http');
 
 const server = http.createServer((req, res) => {

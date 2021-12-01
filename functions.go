@@ -10,6 +10,6 @@ func main() {
 	fmt.Println(data)
 }
 
-func adder(a int, b int) int {
+func adder(a int, b int) int { // return type also declared in this case "int"
 	return a + b
 }
