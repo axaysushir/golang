@@ -5,6 +5,7 @@ import (
 	"sync"
 )
 
+// Channels are similar to async await asynchronous operations like js
 func main() {
 	fmt.Println("Channels in golang")
 	myCh := make(chan int, 2)
