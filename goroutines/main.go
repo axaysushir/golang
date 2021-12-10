@@ -7,6 +7,9 @@ import (
 )
 
 // Go routines and concurrency and Parellalism
+// A Goroutine is a function or method which executes independently and simultaneously in connection
+// with any other Goroutines present in your program. Or in other words, every concurrently executing activity
+// in Go language is known as a Goroutines
 var signals = []string{"test"}
 var wg sync.WaitGroup
 var mutex sync.Mutex
@@ -26,6 +29,17 @@ func main() {
 	}
 	wg.Wait()
 	fmt.Println(signals)
+
+	// f("direct")
+
+	// go f("goroutine")
+
+	// go func(msg string) {
+	// 	fmt.Println(msg)
+	// }("going")
+
+	// time.Sleep(time.Second)
+	// fmt.Println("done")
 }
 
 // func greeter(s string) {
@@ -45,5 +59,11 @@ func getStatusCode(web string) {
 		signals = append(signals, web)
 		mutex.Unlock()
 		fmt.Printf("%d status code %s\n", res.StatusCode, web)
+	}
+}
+
+func f(from string) {
+	for i := 0; i < 3; i++ {
+		fmt.Println(from, ":", i)
 	}
 }
