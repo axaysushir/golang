@@ -32,6 +32,7 @@ const server = http.createServer((req, res) => {
 
 server.listen(1337);
 
+// curl command to run in console
 // $ curl localhost:1337 -d "{}"
 // object
 // $ curl localhost:1337 -d "\"foo\""
