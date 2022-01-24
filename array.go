@@ -15,3 +15,12 @@ func main() {
 	primes := [6]int{2, 3, 5, 7, 11, 13}
 	fmt.Print(primes)
 }
+
+func demo() {
+	fmt.Println("")
+	var data [4]string
+	data[0] = 'oppo'
+	data[1] = 'delux'
+	data[2] = 'apple'
+	fmt.println(data)
+}
