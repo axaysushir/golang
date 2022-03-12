@@ -22,5 +22,6 @@ func demo() {
 	data[0] = 'oppo'
 	data[1] = 'delux'
 	data[2] = 'apple'
+	data[3] = "data"
 	fmt.println(data)
 }
