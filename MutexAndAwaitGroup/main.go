@@ -9,13 +9,13 @@ func main() {
 	fmt.Println("Race condition in go with mutex and await group")
 
 	wg := &sync.WaitGroup{}
-	mutex := &sync.RWMutex{}
+	mutex := &sync.RWMutex{} // read write mutex
 
 	var score = []int{0}
 	wg.Add(3) // add  number of func to execute
 	// use lock and unlock to prevent mishandling
 	go func(wg *sync.WaitGroup, m *sync.RWMutex) {
-		fmt.Println("One R")
+		fmt.Println("One Read")
 		mutex.Lock()
 		score = append(score, 1)
 		mutex.Unlock()
